@@ -1,0 +1,14 @@
+/Users/osazeogieriakhi/Desktop/CPTS321/cpts321-hws/Blank_SOLUTION/SpreadsheetEngine/bin/Debug/net8.0/SpreadsheetEngine.xml
+/Users/osazeogieriakhi/Desktop/CPTS321/cpts321-hws/Blank_SOLUTION/SpreadsheetEngine/bin/Debug/net8.0/SpreadsheetEngine.deps.json
+/Users/osazeogieriakhi/Desktop/CPTS321/cpts321-hws/Blank_SOLUTION/SpreadsheetEngine/bin/Debug/net8.0/SpreadsheetEngine.dll
+/Users/osazeogieriakhi/Desktop/CPTS321/cpts321-hws/Blank_SOLUTION/SpreadsheetEngine/bin/Debug/net8.0/SpreadsheetEngine.pdb
+/Users/osazeogieriakhi/Desktop/CPTS321/cpts321-hws/Blank_SOLUTION/SpreadsheetEngine/obj/Debug/net8.0/SpreadsheetEngine.csproj.AssemblyReference.cache
+/Users/osazeogieriakhi/Desktop/CPTS321/cpts321-hws/Blank_SOLUTION/SpreadsheetEngine/obj/Debug/net8.0/Avalonia/Resources.Inputs.cache
+/Users/osazeogieriakhi/Desktop/CPTS321/cpts321-hws/Blank_SOLUTION/SpreadsheetEngine/obj/Debug/net8.0/SpreadsheetEngine.GeneratedMSBuildEditorConfig.editorconfig
+/Users/osazeogieriakhi/Desktop/CPTS321/cpts321-hws/Blank_SOLUTION/SpreadsheetEngine/obj/Debug/net8.0/SpreadsheetEngine.AssemblyInfoInputs.cache
+/Users/osazeogieriakhi/Desktop/CPTS321/cpts321-hws/Blank_SOLUTION/SpreadsheetEngine/obj/Debug/net8.0/SpreadsheetEngine.AssemblyInfo.cs
+/Users/osazeogieriakhi/Desktop/CPTS321/cpts321-hws/Blank_SOLUTION/SpreadsheetEngine/obj/Debug/net8.0/SpreadsheetEngine.csproj.CoreCompileInputs.cache
+/Users/osazeogieriakhi/Desktop/CPTS321/cpts321-hws/Blank_SOLUTION/SpreadsheetEngine/obj/Debug/net8.0/SpreadsheetEngine.dll
+/Users/osazeogieriakhi/Desktop/CPTS321/cpts321-hws/Blank_SOLUTION/SpreadsheetEngine/obj/Debug/net8.0/refint/SpreadsheetEngine.dll
+/Users/osazeogieriakhi/Desktop/CPTS321/cpts321-hws/Blank_SOLUTION/SpreadsheetEngine/obj/Debug/net8.0/SpreadsheetEngine.pdb
+/Users/osazeogieriakhi/Desktop/CPTS321/cpts321-hws/Blank_SOLUTION/SpreadsheetEngine/obj/Debug/net8.0/ref/SpreadsheetEngine.dll
