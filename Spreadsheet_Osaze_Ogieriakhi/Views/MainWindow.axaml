@@ -1,0 +1,82 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Spreadsheet_Osaze_Ogieriakhi.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:valueConverters="clr-namespace:Spreadsheet_GettingStarted.ValueConverters"
+        xmlns:spreadsheetOsazeOgieriakhi="clr-namespace:Spreadsheet_Osaze_Ogieriakhi"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Spreadsheet_Osaze_Ogieriakhi.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Spreadsheet_Osaze_Ogieriakhi">
+    <Window.Resources>
+        <valueConverters:RowViewModelToIBrushConverter x:Key="RowBrushConverter" />
+    </Window.Resources>
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+        
+    
+    <DockPanel>
+        <Menu DockPanel.Dock="Top" >
+            <MenuItem Header="File" >
+                <MenuItem Header="New"/>
+                <MenuItem Header="Open" Command = "{Binding LoadFromFile}"/>
+                <MenuItem Header="Save As" Command = "{Binding SaveToFile}"/>
+                
+            </MenuItem>
+            <MenuItem Header="Edit" >
+                <MenuItem Header="{Binding UndoMessage}" Command = "{Binding UndoCommand}" IsEnabled= "{Binding IsUndoReady, Mode=OneWay}"/>
+                <MenuItem Header="{Binding RedoMessage}"  Command = "{Binding RedoCommand}" IsEnabled= "{Binding IsRedoReady, Mode=OneWay }"/>
+            </MenuItem>
+            <MenuItem Header="Cell" Command = "{Binding ColorPicker}">
+                <MenuItem Header="Change background colors..." />
+            </MenuItem>
+        </Menu>
+
+
+    <Grid RowDefinitions="*, Auto" Margin="5">
+        <DataGrid Name="Spreadsheet_Osaze" HeadersVisibility="All">
+            <DataGrid.Styles>
+                <!-- Add bottom lines to row headers -->
+                <Style Selector="DataGridRowHeader">
+                    <Setter Property="AreSeparatorsVisible" Value="True" />
+                </Style>
+                <!-- Add bottom and right lines to grid cells-->
+                <Style Selector="DataGridCell /template/ ContentPresenter">
+                    <Setter Property="BorderThickness" Value="0,0,1,1" />
+                    <Setter Property="BorderBrush" Value="#33000000" />
+                </Style>
+                <!-- Remove blue background on row header when selecting a cell -->
+                <Style Selector="DataGridRow:selected /template/
+Rectangle#BackgroundRectangle">
+                    <Setter Property="Fill" Value="Transparent" />
+                </Style>
+                <Style Selector="DataGridRowHeader:selected">
+                    <Setter Property="Background" Value="Transparent" />
+                </Style>
+                <Style Selector="DataGridRowHeader:selected /template/
+Rectangle#BackgroundRectangle">
+                    <Setter Property="Fill" Value="Transparent" />
+                </Style>
+                <!-- Bind DataGridCell background to a Property on the Row view model -->
+                <!-- since we can't bind directly to a cell view model -->
+                <Style Selector="DataGridCell.SpreadsheetCellClass"
+                       x:DataType="spreadsheetOsazeOgieriakhi:RowViewModel">
+                    <Setter Property="Background"
+                            Value="{Binding SelfReference, Converter={StaticResource RowBrushConverter}}" />
+                </Style>
+            </DataGrid.Styles>
+            
+        </DataGrid>
+        
+    </Grid>
+    </DockPanel>
+    
+    
+    
+</Window>
+

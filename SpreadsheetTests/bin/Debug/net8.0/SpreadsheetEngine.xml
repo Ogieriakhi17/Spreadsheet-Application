@@ -1,0 +1,451 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SpreadsheetEngine</name>
+    </assembly>
+    <members>
+        <member name="M:SpreadsheetEngine.ColorChange.#ctor(System.Collections.Generic.List{SpreadsheetEngine.AbstractCell},System.Collections.Generic.List{System.UInt32},System.UInt32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SpreadsheetEngine.ColorChange"/> class.
+            </summary>
+            <param name="cells">Cells that are changed.</param>
+            <param name="prev">List of colors for all previous cells.</param>
+            <param name="next">Color they are all changing to.</param>
+        </member>
+        <member name="M:SpreadsheetEngine.ColorChange.Execute">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpreadsheetEngine.ColorChange.Unexecute">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpreadsheetEngine.ColorChange.Message">
+            <inheritdoc/>
+        </member>
+        <member name="T:SpreadsheetEngine.ExpressionTree">
+            <summary>
+            Expression Tree class for Spreadsheet engine.
+            </summary>
+        </member>
+        <member name="F:SpreadsheetEngine.ExpressionTree.variables">
+            <summary>
+            Dictionary for variables.
+            </summary>
+        </member>
+        <member name="F:SpreadsheetEngine.ExpressionTree.expressionStack">
+            <summary>
+            Stack to hold the expressions during compilation.
+            </summary>
+        </member>
+        <member name="F:SpreadsheetEngine.ExpressionTree.variableStack">
+            <summary>
+            Stack to hold the variables.
+            </summary>
+        </member>
+        <member name="F:SpreadsheetEngine.ExpressionTree.root">
+            <summary>
+            root field.
+            </summary>
+        </member>
+        <member name="F:SpreadsheetEngine.ExpressionTree.expression">
+            <summary>
+            Expression to be evaluated.
+            </summary>
+        </member>
+        <member name="M:SpreadsheetEngine.ExpressionTree.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SpreadsheetEngine.ExpressionTree"/> class.
+            </summary>
+            <param name="expression"></param>
+        </member>
+        <member name="P:SpreadsheetEngine.ExpressionTree.Expression">
+            <summary>
+            Gets or sets accessor for the private field "expression".
+            </summary>
+        </member>
+        <member name="M:SpreadsheetEngine.ExpressionTree.SetVariable(System.String,System.Double)">
+            <summary>
+            Method to set include variable values in the Variable Dictionary.
+            </summary>
+            <param name="variableName"></param>
+            <param name="variableValue"></param>
+        </member>
+        <member name="M:SpreadsheetEngine.ExpressionTree.Evaluate">
+            <summary>
+            Helper function for the evaluate method.
+            </summary>
+            <returns>evaluated double.</returns>
+        </member>
+        <member name="M:SpreadsheetEngine.ExpressionTree.Evaluate(SpreadsheetEngine.TreeNode)">
+            <summary>
+            Evaluate method for tree.
+            </summary>
+            <param name="node"></param>
+            <returns>The evaluated result of the expression.</returns>
+            <exception cref="T:System.NotSupportedException"> If the op is not supported.</exception>
+        </member>
+        <member name="M:SpreadsheetEngine.ExpressionTree.CompilePostExpression">
+            <summary>
+            Compiles and returns the PostFixExpression to a Tree.
+            </summary>
+            <returns>Node.</returns>
+        </member>
+        <member name="M:SpreadsheetEngine.ExpressionTree.ConvertPostExpression">
+            <summary>
+            changes the post expression so that pop would be grabbing the first element instead of last.
+            </summary>
+        </member>
+        <member name="M:SpreadsheetEngine.ExpressionTree.UpdatedCompile(System.String)">
+            <summary>
+            changes the post expression so that pop would be grabbing the first element instead of last.
+            </summary>
+        </member>
+        <member name="M:SpreadsheetEngine.ExpressionTree.IsOperatorSupported(System.String)">
+            <summary>
+            To check and see if an op is supported.
+            </summary>
+            <param name="op"></param>
+            <returns>bool.</returns>
+        </member>
+        <member name="M:SpreadsheetEngine.ExpressionTree.PopAndPush">
+            <summary>
+            Pops and pushes values until a '(' is found.
+            Used when a ')' is found.
+            </summary>
+        </member>
+        <member name="M:SpreadsheetEngine.ExpressionTree.CheckParenthesis(System.String)">
+            <summary>
+            Checks if string is a parenthesis.
+            </summary>
+            <param name="word">String.</param>
+            <returns>bool.</returns>
+        </member>
+        <member name="M:SpreadsheetEngine.ExpressionTree.PopForLeft(SpreadsheetEngine.OperatorNode)">
+            <summary>
+            Continues to pop from varStck until the precedence is greater than or equal to the one being added.
+            Every node popped will be added to the result of PostFixExpression expressionStack.
+            </summary>
+            <param name="temp">OperatorNode.</param>
+        </member>
+        <member name="T:SpreadsheetEngine.ExpTreeNodeFactory">
+            <summary>
+            Factory class to produce specialized cells.
+            </summary>
+        </member>
+        <member name="M:SpreadsheetEngine.ExpTreeNodeFactory.CreateOperatorNode(System.Nullable{System.Char})">
+            <summary>
+            Method defined to produce Operator node based on character passed in.
+            </summary>
+            <param name="op"></param>
+            <returns>OperatorNode.</returns>
+            <exception cref="T:System.NotSupportedException">.</exception>
+        </member>
+        <member name="M:SpreadsheetEngine.ExpTreeNodeFactory.CreateVariableOrConstantNode(System.String)">
+            <summary>
+            Method to create variable and constant nodes.
+            </summary>
+            <param name="value"></param>
+            <returns>TreeNode.</returns>
+        </member>
+        <member name="M:SpreadsheetEngine.ICommand.Execute">
+            <summary>
+            Function that executes the command.
+            </summary>
+        </member>
+        <member name="M:SpreadsheetEngine.ICommand.Unexecute">
+            <summary>
+            Function that undoes the command.
+            </summary>
+        </member>
+        <member name="M:SpreadsheetEngine.ICommand.Message">
+            <summary>
+            Message that represents what the command does.
+            </summary>
+            <returns>Message representing this command.</returns>
+        </member>
+        <member name="T:SpreadsheetEngine.MultiplicationNode">
+            <summary>
+            Class for the mulitplication class.
+            </summary>
+        </member>
+        <member name="M:SpreadsheetEngine.MultiplicationNode.#ctor">
+            <inheritdoc />
+        </member>
+        <member name="M:SpreadsheetEngine.MultiplicationNode.DoOperation(System.Collections.Generic.Dictionary{System.String,System.Double})">
+            <summary>
+            Operation function for multiplication operation nodes.
+            </summary>
+            <param name="variables"></param>
+            <returns> double. </returns>
+        </member>
+        <member name="T:SpreadsheetEngine.OperatorNode">
+            <summary>
+            Operator Node method.
+            </summary>
+        </member>
+        <member name="P:SpreadsheetEngine.OperatorNode.Operator">
+            <summary>
+            Gets or sets Operator.
+            </summary>
+        </member>
+        <member name="P:SpreadsheetEngine.OperatorNode.Left">
+            <summary>
+            Gets or sets Left Node.
+            </summary>
+        </member>
+        <member name="P:SpreadsheetEngine.OperatorNode.Right">
+            <summary>
+            Gets or sets Right node.
+            </summary>
+        </member>
+        <member name="T:SpreadsheetEngine.Spreadsheet">
+            <summary>
+            The spreadsheet class that manages the cells in the logic layer.
+            </summary>
+        </member>
+        <member name="F:SpreadsheetEngine.Spreadsheet.cells">
+            <summary>
+            An array of cells for the spreadsheet.
+            </summary>
+        </member>
+        <member name="M:SpreadsheetEngine.Spreadsheet.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SpreadsheetEngine.Spreadsheet"/> class.
+            </summary>
+            <param name="rowCount"></param>
+            <param name="columnCount"></param>
+        </member>
+        <member name="E:SpreadsheetEngine.Spreadsheet.SpreadsheetPropertyChanged">
+            <summary>
+            This is the event handler that notifies the UI that the spreadsheet has changed.
+            </summary>
+        </member>
+        <member name="P:SpreadsheetEngine.Spreadsheet.ColumnCount">
+            <summary>
+            Gets the size Parameters for the Spreadsheet to be Columns.
+            </summary>
+        </member>
+        <member name="P:SpreadsheetEngine.Spreadsheet.RowCount">
+            <summary>
+            Gets the size Parameters for the Spreadsheet to be Rows.
+            </summary>
+        </member>
+        <member name="M:SpreadsheetEngine.Spreadsheet.GetCell(System.Int32,System.Int32)">
+            <summary>
+            Method designed to access a cell in a spreadhseet using
+            it coordinates (row and column index).
+            </summary>
+            <param name="rowIndex"></param>
+            <param name="columnIndex"></param>
+            <returns>It returns the cell as a Cell.</returns>
+        </member>
+        <member name="M:SpreadsheetEngine.Spreadsheet.Undo">
+            <summary>
+            Undo on spreadsheet.
+            </summary>
+        </member>
+        <member name="M:SpreadsheetEngine.Spreadsheet.Redo">
+            <summary>
+            Redo on spreadsheet.
+            </summary>
+        </member>
+        <member name="M:SpreadsheetEngine.Spreadsheet.RequestColorChange(System.Collections.Generic.List{SpreadsheetEngine.AbstractCell},System.UInt32)">
+            <summary>
+            Color change for a list of cells. Empty lists should be
+            handled before this method is called so that a command
+            that changes no cells is not called.
+            </summary>
+            /// <param name="cellsChanged">List of cells to be changed.</param>
+            /// <param name="next">Color to change to.</param>
+        </member>
+        <member name="M:SpreadsheetEngine.Spreadsheet.GetRedoMessage">
+            <summary>
+            Gets message from command at top of redo stack.
+            </summary>
+            <returns>Message from command at top of stack, if nothing in stack returns just redo.</returns>>
+        </member>
+        <member name="M:SpreadsheetEngine.Spreadsheet.GetUndoMessage">
+            <summary>
+            Gets message from command at top of undo stack.
+            </summary>
+            <returns>Message from command at top of stack, if nothing in stack returns just Undo.</returns>>
+        </member>
+        <member name="M:SpreadsheetEngine.Spreadsheet.EmptyUndo">
+            <summary>
+            Check if undo stack is empty.
+            </summary>
+            <returns>True if stack is empty, otherwise false..</returns>>
+        </member>
+        <member name="M:SpreadsheetEngine.Spreadsheet.EmptyRedo">
+            <summary>
+            Check if redo stack is empty.
+            </summary>
+            <returns>True if stack is empty, otherwise false..</returns>>
+        </member>
+        <member name="M:SpreadsheetEngine.Spreadsheet.SaveSpreadsheet(System.IO.Stream)">
+            <summary>
+            Method to save the spreadsheet from the filepath passed through.
+            </summary>
+            <param name="outputStream"></param>
+        </member>
+        <member name="M:SpreadsheetEngine.Spreadsheet.LoadSpreadsheet(System.IO.Stream)">
+            <summary>
+            To load the spreadsheet.
+            </summary>
+            <param name="stream"></param>
+        </member>
+        <member name="M:SpreadsheetEngine.Spreadsheet.GetCellName(System.Int32,System.Int32)">
+            <summary>
+            Function to get a cell name by passing in its location.
+            </summary>
+            <param name="row"></param>
+            <param name="column"></param>
+            <returns>A string representing the name.</returns>
+        </member>
+        <member name="M:SpreadsheetEngine.Spreadsheet.OnCellPropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Gets the column count.
+            </summary>
+            <param name="sender"> Integer to use for indexing the Cell row.</param>
+            <param name="e"> Integer to use for indexing the Cell .</param>
+        </member>
+        <member name="M:SpreadsheetEngine.Spreadsheet.GetCellByName(System.String)">
+            <summary>
+            Function designed to find a cell referenced by it names,
+            returning the named cell as a "Cell" type.
+            </summary>
+            <param name="cellName"></param>
+            <returns>The desired cell.</returns>
+        </member>
+        <member name="M:SpreadsheetEngine.Spreadsheet.ClearSpreadsheet">
+            <summary>
+            Clears the entire spreadsheet.
+            </summary>
+        </member>
+        <member name="M:SpreadsheetEngine.Spreadsheet.DetectCircularReference(System.String,System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            To check and see if a Cell Text has a circular reference.
+            </summary>
+            <param name="cellName"></param>
+            <param name="cellText"></param>
+            <param name="visitedCells"></param>
+            <returns>A bool whether or not there is a circular reference.</returns>
+        </member>
+        <member name="M:SpreadsheetEngine.Spreadsheet.ExtractCellReferences(System.String)">
+            <summary>
+            Method to remove all cells referenced in a Cell's texts.
+            </summary>
+            <param name="cellText"></param>
+            <returns>a List of cells that are being referenced by a cell.</returns>
+        </member>
+        <member name="M:SpreadsheetEngine.Spreadsheet.ContainsInvalidCellReference(System.String)">
+            <summary>
+            Checks to see a cell referenced is incorrect.
+            </summary>
+            <param name="expression"></param>
+            <returns>a bool.</returns>
+        </member>
+        <member name="M:SpreadsheetEngine.Spreadsheet.CheckReferences(SpreadsheetEngine.AbstractCell,System.String,SpreadsheetEngine.ExpressionTree)">
+            <summary>
+            To check whether formulas inputted are in the right format and their references.
+            </summary>
+            <param name="cell"></param>
+            <param name="cellName"></param>
+            <param name="tree"></param>
+            <returns>a number determining if it has any violations.</returns>
+        </member>
+        <member name="M:SpreadsheetEngine.Spreadsheet.LoadCell(SpreadsheetEngine.Spreadsheet.Cell,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            To directly load the cell into the spreadsheet.
+            </summary>
+            <param name="cell"></param>
+            <param name="row"></param>
+            <param name="col"></param>
+            <param name="value"></param>
+            <param name="text"></param>
+        </member>
+        <member name="M:SpreadsheetEngine.Spreadsheet.GetVariables(System.String,SpreadsheetEngine.ExpressionTree)">
+            <summary>
+            Method for getting the variables present in the text of a cell.
+            </summary>
+            <param name="text"></param>
+            <param name="tree"></param>
+        </member>
+        <member name="T:SpreadsheetEngine.Spreadsheet.Cell">
+            <summary>
+            Concrete cell class for which the spreadsheet class works with.
+            </summary>
+        </member>
+        <member name="F:SpreadsheetEngine.Spreadsheet.Cell.ReferencedBy">
+            <summary>
+            List of Cells that reference this cell.
+            </summary>
+        </member>
+        <member name="F:SpreadsheetEngine.Spreadsheet.Cell.RefrencedTo">
+            <summary>
+            CList of Cells that this cell references.
+            </summary>
+        </member>
+        <member name="M:SpreadsheetEngine.Spreadsheet.Cell.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SpreadsheetEngine.Spreadsheet.Cell"/> class.
+            </summary>
+            <param name="rowIndex"></param>
+            <param name="colIndex"></param>
+        </member>
+        <member name="P:SpreadsheetEngine.Spreadsheet.Cell.Value">
+            <inheritdoc/>
+        </member>
+        <member name="T:SpreadsheetEngine.SubtractionNode">
+            <summary>
+            Subraction class inheriting from the Operator Node.
+            </summary>
+        </member>
+        <member name="M:SpreadsheetEngine.SubtractionNode.#ctor">
+            <inheritdoc />
+        </member>
+        <member name="M:SpreadsheetEngine.SubtractionNode.DoOperation(System.Collections.Generic.Dictionary{System.String,System.Double})">
+            <summary>
+            Operation method being overloaded for the subtraction class.
+            </summary>
+            <param name="variables"></param>
+            <returns>double.</returns>
+        </member>
+        <member name="M:SpreadsheetEngine.TextChange.#ctor(SpreadsheetEngine.AbstractCell,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SpreadsheetEngine.TextChange"/> class.
+            </summary>
+            <param name="cell">Cell that is affected.</param>
+            <param name="prevVal">Previous text value.</param>
+            <param name="changeToVal">Value that text is changing to.</param>
+        </member>
+        <member name="M:SpreadsheetEngine.TextChange.Execute">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpreadsheetEngine.TextChange.Unexecute">
+            <inheritdoc/>
+        </member>
+        <member name="M:SpreadsheetEngine.TextChange.Message">
+            <inheritdoc/>
+        </member>
+        <member name="T:SpreadsheetEngine.TreeNode">
+            <summary>
+            Node class for building th e expressoino tree.
+            </summary>
+        </member>
+        <member name="M:SpreadsheetEngine.TreeNode.Evaluate">
+            <summary>
+            Evaluate class for all nodes that inherit from Treenode.
+            </summary>
+        </member>
+        <member name="T:SpreadsheetEngine.VariableNode">
+            <summary>
+            Variable Node class.
+            </summary>
+        </member>
+        <member name="P:SpreadsheetEngine.VariableNode.Name">
+            <summary>
+            Gets or sets name of the variable.
+            </summary>
+        </member>
+    </members>
+</doc>

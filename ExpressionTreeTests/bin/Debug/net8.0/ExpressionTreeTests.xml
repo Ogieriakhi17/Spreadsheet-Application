@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ExpressionTreeTests</name>
+    </assembly>
+    <members>
+        <member name="T:ExpressionTreeTests.Tests">
+            <summary>
+            Test Functions for Expression tree
+            </summary>
+        </member>
+        <member name="M:ExpressionTreeTests.Tests.TestNormalCases(System.String)">
+            <summary>
+            Functions to test normal cases of the tree evaluating expressions
+            </summary>
+            <param name="expression"></param>
+            <returns> double</returns>
+        </member>
+        <member name="M:ExpressionTreeTests.Tests.TestVariableInputs">
+            <summary>
+            Functions to test the variable implementations fo the expression tree
+            </summary>
+            <returns> void </returns>
+        </member>
+        <member name="M:ExpressionTreeTests.Tests.TestAddedSupportedCases(System.String)">
+            <summary>
+            Functions to test normal cases of the tree evaluating expressions supporting
+            parenthesis and precedence 
+            </summary>
+            <param name="expression"></param>
+            <returns> double</returns>
+        </member>
+    </members>
+</doc>

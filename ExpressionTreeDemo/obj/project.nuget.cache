@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "TCOVn9MGHXyvaOeJ7qMOXtzQDMujF2SZMcxAhqn/KDscI9lhdygsDSWXGs8hQfdqxXe3i/1j5ufds8sFrm+wlg==",
+  "success": true,
+  "projectFilePath": "/Users/osazeogieriakhi/Desktop/CPTS321/cpts321-hws/Blank_SOLUTION/ExpressionTreeDemo/ExpressionTreeDemo.csproj",
+  "expectedPackageFiles": [
+    "/Users/osazeogieriakhi/.nuget/packages/avalonia/11.0.6/avalonia.11.0.6.nupkg.sha512",
+    "/Users/osazeogieriakhi/.nuget/packages/avalonia.buildservices/0.0.29/avalonia.buildservices.0.0.29.nupkg.sha512",
+    "/Users/osazeogieriakhi/.nuget/packages/avalonia.controls.datagrid/11.0.6/avalonia.controls.datagrid.11.0.6.nupkg.sha512",
+    "/Users/osazeogieriakhi/.nuget/packages/avalonia.remote.protocol/11.0.6/avalonia.remote.protocol.11.0.6.nupkg.sha512",
+    "/Users/osazeogieriakhi/.nuget/packages/avaloniacolorpicker/1.4.0/avaloniacolorpicker.1.4.0.nupkg.sha512",
+    "/Users/osazeogieriakhi/.nuget/packages/microcom.runtime/0.11.0/microcom.runtime.0.11.0.nupkg.sha512",
+    "/Users/osazeogieriakhi/.nuget/packages/system.collections.immutable/6.0.0/system.collections.immutable.6.0.0.nupkg.sha512",
+    "/Users/osazeogieriakhi/.nuget/packages/system.componentmodel.annotations/4.5.0/system.componentmodel.annotations.4.5.0.nupkg.sha512",
+    "/Users/osazeogieriakhi/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

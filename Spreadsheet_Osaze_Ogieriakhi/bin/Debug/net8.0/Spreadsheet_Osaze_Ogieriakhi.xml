@@ -1,0 +1,192 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Spreadsheet_Osaze_Ogieriakhi</name>
+    </assembly>
+    <members>
+        <member name="F:Spreadsheet_Osaze_Ogieriakhi.CellViewModel.isSelected">
+            <summary>
+            Indicates if a cell is selected.
+            </summary>
+        </member>
+        <member name="P:Spreadsheet_Osaze_Ogieriakhi.RowViewModel.SelfReference">
+            <summary>
+            This property provides a way to notify the value converter that it needs to update
+            </summary>
+        </member>
+        <member name="T:Spreadsheet_Osaze_Ogieriakhi.ViewModels.MainWindowViewModel">
+            <inheritdoc />
+        </member>
+        <member name="P:Spreadsheet_Osaze_Ogieriakhi.ViewModels.MainWindowViewModel.AskForAColor">
+            <summary>
+            Gets Interaction for asking a file to save.
+            </summary>
+        </member>
+        <member name="P:Spreadsheet_Osaze_Ogieriakhi.ViewModels.MainWindowViewModel.AskForFileToLoad">
+            <summary>
+            Gets Interaction for asking a file to save.
+            </summary>
+        </member>
+        <member name="M:Spreadsheet_Osaze_Ogieriakhi.ViewModels.MainWindowViewModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Spreadsheet_Osaze_Ogieriakhi.ViewModels.MainWindowViewModel"/> class.
+            MainWindowViewModel constructor.
+            </summary>
+        </member>
+        <member name="P:Spreadsheet_Osaze_Ogieriakhi.ViewModels.MainWindowViewModel.IsRedoReady">
+            <summary>
+            Gets or sets a value indicating whether redo can be preformed.
+            </summary>
+        </member>
+        <member name="P:Spreadsheet_Osaze_Ogieriakhi.ViewModels.MainWindowViewModel.UndoMessage">
+            <summary>
+            Gets or sets message to display in undo menu header.
+            </summary>
+        </member>
+        <member name="P:Spreadsheet_Osaze_Ogieriakhi.ViewModels.MainWindowViewModel.RedoMessage">
+            <summary>
+            Gets or sets message to display in redo menu header.
+            </summary>
+        </member>
+        <member name="M:Spreadsheet_Osaze_Ogieriakhi.ViewModels.MainWindowViewModel.InitializeSpreadsheet(System.Collections.Generic.List{Spreadsheet_Osaze_Ogieriakhi.RowViewModel},SpreadsheetEngine.Spreadsheet)">
+            <summary>
+            Initializes spreadsheet objects with objects already created.
+            </summary>
+            <param name="sheetRows"> Used for RowViewModel.</param>
+            <param name="sheet"> Used for spreadsheet object.</param>
+        </member>
+        <member name="M:Spreadsheet_Osaze_Ogieriakhi.ViewModels.MainWindowViewModel.SelectCell(System.Int32,System.Int32)">
+            <summary>
+            This is a method to select a cell in the spreadsheet.
+            </summary>
+            <param name="rowIndex"></param>
+            <param name="columnIndex"></param>
+        </member>
+        <member name="M:Spreadsheet_Osaze_Ogieriakhi.ViewModels.MainWindowViewModel.ToggleCellSelection(System.Int32,System.Int32)">
+            <summary>
+            Method designed to support the cell selection functionality.
+            </summary>
+            <param name="rowIndex"></param>
+            <param name="columnIndex"></param>
+        </member>
+        <member name="M:Spreadsheet_Osaze_Ogieriakhi.ViewModels.MainWindowViewModel.ResetSelection">
+            <summary>
+            Method designed to assist in the undo and redo functionality.
+            </summary>
+        </member>
+        <member name="M:Spreadsheet_Osaze_Ogieriakhi.ViewModels.MainWindowViewModel.LoadFromFile">
+            <summary>
+            Method defined to load the a spreadsheet from a file when clicked.
+            </summary>
+        </member>
+        <member name="M:Spreadsheet_Osaze_Ogieriakhi.ViewModels.MainWindowViewModel.SaveToFile">
+            <summary>
+            To save the present spreadsheet being worked on.
+            </summary>
+        </member>
+        <member name="M:Spreadsheet_Osaze_Ogieriakhi.ViewModels.MainWindowViewModel.RunDemo">
+            <summary>
+            Method to test the functionality of the referencing and updating of the spreadsheet.
+            </summary>
+        </member>
+        <member name="M:Spreadsheet_Osaze_Ogieriakhi.ViewModels.MainWindowViewModel.SetCellText(System.Int32,System.Int32,System.String)">
+            <summary>
+            Gets cell at row and col.
+            </summary>
+            <param name="row"> Row of cell added.</param>
+            <param name="col"> column of cell added.</param>
+            <param name="val"> string that text should be set to.</param>
+        </member>
+        <member name="M:Spreadsheet_Osaze_Ogieriakhi.ViewModels.MainWindowViewModel.GetCellText(System.Int32,System.Int32)">
+            <summary>
+            Gets cell text at row and col.
+            </summary>
+            <returns>Cell at index.</returns>
+            <param name="row"> Row of cell added.</param>
+            <param name="col"> column of cell added.</param>
+        </member>
+        <member name="M:Spreadsheet_Osaze_Ogieriakhi.ViewModels.MainWindowViewModel.ColorPicker">
+            <summary>
+            Task for asking for a color.
+            </summary>
+            <returns> Nothing.</returns>
+        </member>
+        <member name="M:Spreadsheet_Osaze_Ogieriakhi.ViewModels.MainWindowViewModel.UndoCommand">
+            <summary>
+            Undoes the last command given to the spreadsheet.
+            </summary>
+        </member>
+        <member name="M:Spreadsheet_Osaze_Ogieriakhi.ViewModels.MainWindowViewModel.RedoCommand">
+            <summary>
+            Redoes the last command undone to the spreadsheet.
+            </summary>
+        </member>
+        <member name="M:Spreadsheet_Osaze_Ogieriakhi.ViewModels.MainWindowViewModel.UpdateMessages">
+            <summary>
+            Gets or sets message to display in undo menu header.
+            </summary>
+        </member>
+        <member name="P:Spreadsheet_Osaze_Ogieriakhi.Views.MainWindow.Rows">
+            <summary>
+            Gets the 2D array that represents the logical spreadsheet.
+            </summary>
+        </member>
+        <member name="M:Spreadsheet_Osaze_Ogieriakhi.Views.MainWindow.#ctor">
+             <summary>
+             Initializes a new instance of the <see cref="T:Spreadsheet_Osaze_Ogieriakhi.Views.MainWindow"/> class.
+             </summary>
+            
+        </member>
+        <member name="M:Spreadsheet_Osaze_Ogieriakhi.Views.MainWindow.InitializeDataGrid(Avalonia.Controls.DataGrid,Spreadsheet_Osaze_Ogieriakhi.ViewModels.MainWindowViewModel)">
+            <summary>
+            Method to initialize the spreadsheet for the UI layer.
+            </summary>
+            <param name="dataGrid"></param>
+        </member>
+        <member name="M:Spreadsheet_Osaze_Ogieriakhi.Views.MainWindow.OnSpreadsheetPropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            For updating the spreadsheet value.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Spreadsheet_Osaze_Ogieriakhi.Views.MainWindow.InitializeComponent(System.Boolean,System.Boolean)">
+            <summary>
+            Wires up the controls and optionally loads XAML markup and attaches dev tools (if Avalonia.Diagnostics package is referenced).
+            </summary>
+            <param name="loadXaml">Should the XAML be loaded into the component.</param>
+            <param name="attachDevTools">Should the dev tools be attached.</param>
+        </member>
+        <member name="T:Spreadsheet_GettingStarted.ValueConverters.RowViewModelToIBrushConverter">
+            <summary>
+            Class for converting the brush to Row View Model.
+            </summary>
+        </member>
+        <member name="F:Spreadsheet_GettingStarted.ValueConverters.RowViewModelToIBrushConverter.Instance">
+            <summary>
+            Instance of the brush converter.
+            </summary>
+        </member>
+        <member name="M:Spreadsheet_GettingStarted.ValueConverters.RowViewModelToIBrushConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Convert method.
+            </summary>
+            <param name="value"></param>
+            <param name="targetType"></param>
+            <param name="parameter"></param>
+            <param name="culture"></param>
+            <returns>the brush for changing cell color</returns>
+        </member>
+        <member name="M:Spreadsheet_GettingStarted.ValueConverters.RowViewModelToIBrushConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Convert back method.
+            </summary>
+            <param name="value"></param>
+            <param name="targetType"></param>
+            <param name="parameter"></param>
+            <param name="culture"></param>
+            <returns>void.</returns>
+            <exception cref="T:System.NotImplementedException">To show if it has been implemented.</exception>
+        </member>
+    </members>
+</doc>
