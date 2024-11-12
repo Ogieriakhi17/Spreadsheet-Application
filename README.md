@@ -8,7 +8,10 @@ Data Formatting: Enables users to adjust font styles, colors, and cell alignment
 Import/Export Functionality: Easily import data from .csv files and export your sheets as .csv files for compatibility with other spreadsheet tools.
 User-Friendly Interface: A simple, intuitive UI that mimics traditional spreadsheet applications for easy use.
 
+
 **Built With**
 C#: For core functionality and back-end processing.
+
 Avalonia: For the graphical user interface.
+
 ExpressionTrees and Logic Engine: For data manipulation and handling .csv file imports/exports.
